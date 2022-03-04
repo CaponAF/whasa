@@ -6,11 +6,16 @@
           box-sizing: content-box;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 html, body {
   width: 100%;
   height: 100%;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+  scroll-behavior: smooth;
 }
 
 .container_body {
@@ -27,7 +32,7 @@ html, body {
 
 .container_body nav {
   color: white;
-  background-color: #128c7e;
+  background: #128c7e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,6 +55,7 @@ html, body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  color: #ffffff;
 }
 
 .container_body nav .nav-cont a {
@@ -65,10 +71,30 @@ html, body {
 .container_body .container_main {
   width: 100%;
   height: calc( 100% - 5rem);
-  overflow-y: scroll;
+  overflow-x: scroll;
 }
 
-.container_body .container_main section article {
+.container_body section {
+  width: 100%;
+}
+
+.container_body main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  width: 400%;
+  height: 100%;
+}
+
+.container_body main #chats, .container_body main #estados, .container_body main #llamadas {
+  width: 100%;
+}
+
+.container_body main #chats article, .container_body main #estados article, .container_body main #llamadas article {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -77,9 +103,10 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
+  width: 100%;
 }
 
-.container_body .container_main section article .cont-article {
+.container_body main #chats article .cont-article, .container_body main #estados article .cont-article, .container_body main #llamadas article .cont-article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,7 +118,7 @@ html, body {
   padding: 0.7rem;
 }
 
-.container_body .container_main section article .cont-article div {
+.container_body main #chats article .cont-article div, .container_body main #estados article .cont-article div, .container_body main #llamadas article .cont-article div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,18 +128,17 @@ html, body {
           flex-flow: row;
 }
 
-.container_body .container_main section article .cont-article div #material {
+.container_body main #chats article .cont-article div #material, .container_body main #estados article .cont-article div #material, .container_body main #llamadas article .cont-article div #material {
   font-size: 20px;
-  color: #34b7f1;
 }
 
-.container_body .container_main section article #hora {
+.container_body main #chats article #hora, .container_body main #estados article #hora, .container_body main #llamadas article #hora {
   position: absolute;
   top: 0.4rem;
   right: 0.4rem;
 }
 
-.container_body .container_main section article img {
+.container_body main #chats article img, .container_body main #estados article img, .container_body main #llamadas article img {
   padding: 0.6rem;
   width: 3rem;
   height: 3rem;
@@ -129,14 +155,109 @@ html, body {
   text-align: center;
   line-height: 2;
   border-radius: 100%;
-  background-color: #128c7e
+  background-color: #128c7e;
 }
 
 .linea {
   border-bottom: 2px solid white;
 }
-#archivado{
-  top:90px;
+
+.linea #archivado {
+  padding: 0.6rem;
+  margin: 20px;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
 }
 
+#lapiz {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  margin-bottom: 60px;
+  width: 3rem;
+  height: 3rem;
+  color: #333232;
+  text-align: center;
+  line-height: 2;
+  border-radius: 100%;
+  background-color: #E8ebf0;
+  -webkit-box-shadow: 3px 3px 3px 3px #dfdbdb;
+  box-shadow: 3px 3px 3px 3px #dfdbdb;
+}
+
+#cam {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  color: white;
+  text-align: center;
+  line-height: 2;
+  border-radius: 100%;
+  background-color: #128c7e;
+}
+
+#mas {
+  position: relative;
+  color: #25d366;
+  background-color: #ffffff;
+  top: 3.9rem;
+  left: 2.4rem;
+  z-index: 1000000;
+  border-radius: 100%;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#imagen {
+  color: gray;
+  font-size: 1.5rem;
+}
+
+#ha {
+  padding: 3px;
+}
+
+.recien {
+  color: gray;
+}
+
+.visto {
+  color: gray;
+}
+
+.silenciado {
+  color: gray;
+}
+
+#perdida {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  color: white;
+  text-align: center;
+  line-height: 2;
+  border-radius: 100%;
+  background-color: #128c7e;
+}
+
+.select {
+  border-bottom: 2px solid white;
+}
+
+#material {
+  color: #34b7f1;
+}
+
+.reci {
+  color: #25d366;
+}
+
+.perdi {
+  color: red;
+}
 /*# sourceMappingURL=css.css.map */
